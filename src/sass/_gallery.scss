@@ -1,0 +1,31 @@
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    padding: 0 15 0 15;
+    margin-bottom: 10px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-around;
+    gap: 5px;
+
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+
+    background-color: beige;
+}
+
+.photo-card {
+    max-width: 450px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

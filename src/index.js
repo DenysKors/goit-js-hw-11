@@ -9,7 +9,7 @@ const refs = {
 
 let queryName = '';
 let page = 1;
-let per_page = 5;
+let per_page = 6;
 
 refs.searchForm.addEventListener('submit', onSearch);
 refs.loadBtn.addEventListener('click', onClickLoad);
@@ -72,7 +72,7 @@ function galleryMarkup(imageData) {
     const markup = imageData.map((image) => {
     return `
         <div class="photo-card">
-            <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" width=450px />
+            <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy"/>
             <div class="info">
                 <p class="info-item">
                     <b>Likes</b>${image.likes}

@@ -1,6 +1,16 @@
-// .load-more {
-//     display: none;
-// }
+
+.load-more {
+    padding: 10 10 10 10;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+    display: block;
+
+    border: none;
+    border-radius: 4px;
+
+    background-color: rgb(147, 233, 147);
+}
 
 .is-hidden {
     display: none;
