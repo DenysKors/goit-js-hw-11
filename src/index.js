@@ -1,5 +1,7 @@
 import { fetchImages } from "./fetchImages";
 import Notiflix from 'notiflix';
+// import SimpleLightbox from 'simplelightbox';
+// import "simplelightbox/dist/simple-lightbox.min.css";
 
 const refs = {
     searchForm: document.querySelector('#search-form'),
@@ -10,6 +12,8 @@ const refs = {
 let queryName = '';
 let page = 1;
 let per_page = 6;
+
+
 
 refs.searchForm.addEventListener('submit', onSearch);
 refs.loadBtn.addEventListener('click', onClickLoad);
@@ -67,11 +71,14 @@ async function onClickLoad() {
     }
 }
 
+// let lightbox = new SimpleLightbox('.gallery a', { captionsData: "alt", captionDelay: 250 });
+
 function galleryMarkup(imageData) { 
     console.log(imageData);
     const markup = imageData.map((image) => {
     return `
         <div class="photo-card">
+            <a href="${image.largeImageURL}">
             <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy"/>
             <div class="info">
                 <p class="info-item">
@@ -87,10 +94,12 @@ function galleryMarkup(imageData) {
                     <b>Downloads</b>${image.downloads}
                 </p>
             </div>
+            </a>
         </div>
         `;
     })
     .join('');
     
     refs.gallery.insertAdjacentHTML('beforeend', markup);
+    // lightbox.refresh();
 }
