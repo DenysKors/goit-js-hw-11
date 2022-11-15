@@ -1,5 +1,7 @@
 import { fetchImages } from "./fetchImages";
 import Notiflix from 'notiflix';
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
 
 const refs = {
     searchForm: document.querySelector('#search-form'),
