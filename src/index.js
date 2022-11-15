@@ -1,7 +1,5 @@
 import { fetchImages } from "./fetchImages";
 import Notiflix from 'notiflix';
-// import SimpleLightbox from 'simplelightbox';
-// import "simplelightbox/dist/simple-lightbox.min.css";
 
 const refs = {
     searchForm: document.querySelector('#search-form'),
@@ -11,9 +9,7 @@ const refs = {
 
 let queryName = '';
 let page = 1;
-let per_page = 6;
-
-
+let per_page = 40;
 
 refs.searchForm.addEventListener('submit', onSearch);
 refs.loadBtn.addEventListener('click', onClickLoad);
@@ -71,7 +67,7 @@ async function onClickLoad() {
     }
 }
 
-// let lightbox = new SimpleLightbox('.gallery a', { captionsData: "alt", captionDelay: 250 });
+let lightbox = new SimpleLightbox('.gallery a', { captionsData: "alt", captionDelay: 250 });
 
 function galleryMarkup(imageData) { 
     console.log(imageData);
@@ -79,21 +75,21 @@ function galleryMarkup(imageData) {
     return `
         <div class="photo-card">
             <a href="${image.largeImageURL}">
-            <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy"/>
-            <div class="info">
-                <p class="info-item">
-                    <b>Likes</b>${image.likes}
-                </p>
-                <p class="info-item">
-                    <b>Views</b>${image.views}
-                </p>
-                <p class="info-item">
-                    <b>Comments</b>${image.comments}
-                </p>
-                <p class="info-item">
-                    <b>Downloads</b>${image.downloads}
-                </p>
-            </div>
+                <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy"/>
+                <div class="info">
+                    <p class="info-item">
+                        <b>Likes</b>${image.likes}
+                    </p>
+                    <p class="info-item">
+                        <b>Views</b>${image.views}
+                    </p>
+                    <p class="info-item">
+                        <b>Comments</b>${image.comments}
+                    </p>
+                    <p class="info-item">
+                        <b>Downloads</b>${image.downloads}
+                    </p>
+                </div>
             </a>
         </div>
         `;
@@ -101,5 +97,5 @@ function galleryMarkup(imageData) {
     .join('');
     
     refs.gallery.insertAdjacentHTML('beforeend', markup);
-    // lightbox.refresh();
+    lightbox.refresh();
 }

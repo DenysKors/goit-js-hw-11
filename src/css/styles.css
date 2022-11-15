@@ -6,8 +6,9 @@ body {
 
 img {
   display: block;
-  max-width: 100%;
-  height: auto;
+  width: 350px;
+  height: 250px;
+  object-fit: cover;
 }
 
 button {
@@ -27,6 +28,10 @@ button {
   text-align: center;
 
   background-color: lightslategray;
+}
+
+input::placeholder {
+  color: rgba(212, 16, 16, 0.6);
 }
 
 .load-more {
@@ -52,7 +57,10 @@ button {
   flex-wrap: wrap;
   gap: 15px;
 
+  width: 100%;
+
   padding: 0 15 0 15;
+  margin: 0 auto;
   margin-bottom: 10px;
 }
 
